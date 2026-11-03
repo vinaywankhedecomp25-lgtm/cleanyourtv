@@ -25,10 +25,9 @@ jobs:
         with:
           cmdline-tools-version: 'latest'
           accept-android-sdk-licenses: true
-
-      - name: Install SDK packages
-        run: |
-          echo "y" | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_HOME "platform-tools" "platforms;android-26" "build-tools;34.0.0"
+          packages: |
+            platforms;android-26
+            build-tools;34.0.0
 
       - name: Make gradlew executable
         run: chmod +x launcher/gradlew
